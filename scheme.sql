@@ -12,6 +12,6 @@ CREATE TABLE summoners (
 CREATE TABLE summoner_matches (
   gameId bigint NOT NULL,
   accountId varchar(56) NOT NULL,
-  PRIMARY KEY (gameId),
-  FOREIGN KEY (accountId) REFERENCES summoners(accountId)
+  FOREIGN KEY (accountId) REFERENCES summoners(accountId),
+  PRIMARY KEY (gameId, accountId)
 )
