@@ -8,3 +8,14 @@ CREATE TABLE summoners (
   summonerLevel int NOT NULL,
   timestamp timestamp with time zone NOT NULL
 )
+
+CREATE TABLE matchreferences (
+  gameId bigint PRIMARY KEY,
+  role varchar(16) NOT NULL,
+  season int NOT NULL,
+  platformId varchar(16) NOT NULL,
+  champion int NOT NULL,
+  queue int NOT NULL,
+  lane varchar(16) NOT NULL,
+  timestamp bigint NOT NULL
+)
