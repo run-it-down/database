@@ -9,7 +9,7 @@ CREATE TABLE summoners (
   timestamp timestamp with time zone NOT NULL
 )
 
-CREATE TABLE matchreferences (
+CREATE TABLE summoner_matches (
   gameId bigint NOT NULL,
   accountId varchar(56) NOT NULL,
   PRIMARY KEY (gameId),
