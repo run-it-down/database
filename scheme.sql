@@ -10,12 +10,8 @@ CREATE TABLE summoners (
 )
 
 CREATE TABLE matchreferences (
-  gameId bigint PRIMARY KEY,
-  role varchar(16) NOT NULL,
-  season int NOT NULL,
-  platformId varchar(16) NOT NULL,
-  champion int NOT NULL,
-  queue int NOT NULL,
-  lane varchar(16) NOT NULL,
-  timestamp bigint NOT NULL
+  gameId bigint NOT NULL,
+  accountId varchar(56) NOT NULL,
+  PRIMARY KEY (gameId),
+  FOREIGN KEY (accountId) REFERENCES summoners(accountId)
 )
