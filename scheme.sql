@@ -163,11 +163,13 @@ CREATE TABLE participants (
   spell1Id int NOT NULL,
   spell2Id int NOT NULL,
   statId varchar(36) NOT NULL,
+  timelineId varchar(36) NOT NULL,
   PRIMARY KEY (participantId),
   FOREIGN KEY (teamId) REFERENCES teams(teamId),
   FOREIGN KEY (accountId) REFERENCES summoners(accountId),
   FOREIGN KEY (championId) REFERENCES champions(id),
-  FOREIGN KEY (statId) REFERENCES stats(statId)
+  FOREIGN KEY (statId) REFERENCES stats(statId),
+  FOREIGN KEY (timelineId) REFERENCES timelines(timelineId)
 );
 
 
