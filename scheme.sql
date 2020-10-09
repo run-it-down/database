@@ -18,7 +18,7 @@ CREATE TABLE summoner_matches (
 
 CREATE TABLE teams (
   teamId varchar(36) NOT NULL,
-  win bool NOT NULL,
+  win varchar(16) NOT NULL,
   firstBlood bool NOT NULL,
   firstTower bool NOT NULL,
   firstInhibitor bool NOT NULL,
@@ -103,12 +103,12 @@ CREATE TABLE stats(
   sightWardsBoughtInGame int NOT NULL,
   wardsPlaced int NOT NULL,
   wardsKilled int NOT NULL,
-  firstBloodKill int NOT NULL,
-  firstBloodAssist int NOT NULL,
-  firstTowerKill int NOT NULL,
-  firstTowerAssist int NOT NULL,
-  firstInhibitorKill int NOT NULL,
-  firstInhibitorAssit int NOT NULL,
+  firstBloodKill bool NOT NULL,
+  firstBloodAssist bool NOT NULL,
+  firstTowerKill bool NOT NULL,
+  firstTowerAssist bool NOT NULL,
+  firstInhibitorKill bool NOT NULL,
+  firstInhibitorAssit bool NOT NULL,
   combatPlayerScore int NOT NULL,
   objectivePlayerScore int NOT NULL,
   totalPlayerScore int NOT NULL,
@@ -155,7 +155,7 @@ CREATE TABLE stats(
   PRIMARY KEY (statId)
 );
 
-CREATE TABLE participant (
+CREATE TABLE participants (
   participantId varchar(36) NOT NULL,
   teamId varchar(36) NOT NULL,
   accountId varchar(56) NOT NULL,
