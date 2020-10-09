@@ -18,21 +18,21 @@ CREATE TABLE summoner_matches (
 
 CREATE TABLE teams (
   teamId varchar(36) NOT NULL,
-  win bool varchar(16),
+  win bool NOT NULL,
   firstBlood bool NOT NULL,
   firstTower bool NOT NULL,
   firstInhibitor bool NOT NULL,
   firstBaron bool NOT NULL,
   firstDragon bool NOT NULL,
   firstRiftHerald bool NOT NULL,
-  towerKills int,
-  inhibitorKills int,
-  baronKills int,
-  dragonKills int,
-  vilemawKills int
-  riftHeraldKills int
-  dominionVictoryScore int,
-  bans int[]
+  towerKills int NOT NULL,
+  inhibitorKills int NOT NULL,
+  baronKills int NOT NULL,
+  dragonKills int NOT NULL,
+  vilemawKills int NOT NULL,
+  riftHeraldKills int NOT NULL,
+  dominionVictoryScore int NOT NULL,
+  bans int[] NOT NULL,
   PRIMARY KEY (teamId)
 );
 
@@ -184,6 +184,5 @@ CREATE TABLE matches (
   gameType varchar(32) NOT NULL,
   teams varchar(36)[] NOT NULL,
   participants varchar(36)[] NOT NULL,
-  FOREIGN KEY (gameId) REFERENCES summoner_matches(gameId),
   PRIMARY KEY (gameId)
 );
