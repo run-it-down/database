@@ -177,6 +177,7 @@ for id, champ in all_champion_id.items():
                 "VALUES (%s, %s)"
     values = (str(id), champ)
 
+    cur = conn.cursor()
     try:
         cur.execute(statement, values)
     except psycopg2.Error as e:
