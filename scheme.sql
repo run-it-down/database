@@ -44,13 +44,13 @@ CREATE TABLE champions (
 
 CREATE TABLE timelines(
   timelineId varchar(36) NOT NULL,
-  creepsPerMinDeltas text[] NOT NULL,
-  xpPerMinDeltas text[] NOT NULL,
-  goldPerMinDeltas text[] NOT NULL,
-  csDiffPerMinDeltas text[] NOT NULL,
-  xpDiffPerMinDeltas text[] NOT NULL,
-  damageTakenPerMinDeltas text[] NOT NULL,
-  damageTakenDiffPerMinDeltas text[] NOT NULL,
+  creepsPerMinDeltas text NOT NULL,
+  xpPerMinDeltas text NOT NULL,
+  goldPerMinDeltas text NOT NULL,
+  csDiffPerMinDeltas text NOT NULL,
+  xpDiffPerMinDeltas text NOT NULL,
+  damageTakenPerMinDeltas text NOT NULL,
+  damageTakenDiffPerMinDeltas text NOT NULL,
   PRIMARY KEY (timelineId)
 );
 
