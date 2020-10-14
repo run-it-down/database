@@ -176,7 +176,7 @@ CREATE TABLE participants (
 CREATE TABLE matches (
   gameId bigint NOT NULL,
   platformId varchar(16) NOT NULL,
-  gameCreation int NOT NULL,
+  gameCreation bigint NOT NULL,
   gameDuration int NOT NULL,
   queueId int NOT NULL,
   mapId int NOT NULL,
