@@ -202,7 +202,9 @@ CREATE TABLE participant_frame (
   position point,
   jungleMinionsKilled int,
   timestamp bigint,
-  PRIMARY KEY (participantId, gameId)
+  PRIMARY KEY (participantId, gameId),
+  FOREIGN KEY (participantId) REFERENCES participants(participantId),
+  FOREIGN KEY (gameId) REFERENCES matches(gameId)
 );
               
 CREATE TABLE event_frame (
@@ -230,5 +232,8 @@ CREATE TABLE event_frame (
   buildingType varchar(16),
   victimId varchar(36),
   timestamp bigint,
-  PRIMARY KEY (participantId, gameId)
+  PRIMARY KEY (participantId, gameId, teamId),
+  FOREIGN KEY (participantId) REFERENCES participants(participantId),
+  FOREIGN KEY (gameId) REFERENCES matches(gameId),
+  FOREIGN KEY (teamId) REFERENCES teams(teamId)
 );
