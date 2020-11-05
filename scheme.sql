@@ -188,3 +188,47 @@ CREATE TABLE matches (
   participants varchar(36)[] NOT NULL,
   PRIMARY KEY (gameId)
 );
+
+CREATE TABLE participant_frame (
+  participantId varchar(36) NOT NULL,
+  gameId bigint NOT NULL,
+  minionsKilled int,
+  teamScore int,
+  dominionScore int,
+  totalGold int,
+  level int,
+  xp int,
+  currentGold int,
+  position point,
+  jungleMinionsKilled int,
+  timestamp bigint,
+  PRIMARY KEY (participantId, gameId)
+);
+              
+CREATE TABLE event_frame (
+  participantId varchar(36) NOT NULL,
+  gameId bigint NOT NULL,
+  teamId varchar(36) NOT NULL,
+  laneType varchar(16),
+  skillSlot int,
+  ascendedType varchar(16),
+  creatorId int,
+  afterId int,
+  eventType varchar(16),
+  type varchar(32),
+  levelUpType varchar(16),
+  wardType varchar(16),
+  towerType varchar(12),
+  itemId int,
+  beforeId int,
+  pointCaptured varchar(16),
+  monsterType varchar(16),
+  monsterSubType varchar(16),
+  position point,
+  killerId varchar(36),
+  assistingParticipantIds varchar(36)[],
+  buildingType varchar(16),
+  victimId varchar(36),
+  timestamp bigint,
+  PRIMARY KEY (participantId, gameId)
+);
