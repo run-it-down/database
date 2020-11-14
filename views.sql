@@ -1,10 +1,8 @@
 -- View for all games and the corresponding statistics, where two players were in the same game
-CREATE OR REPLACE VIEW public.common_game_stats
- AS
  SELECT sm1.gameid,
     sm1.accountid,
     p.teamid,
-    p.championid,
+    c.name AS champion,
     p.spell1id,
     p.spell2id,
     s.statid,
@@ -104,8 +102,9 @@ CREATE OR REPLACE VIEW public.common_game_stats
     s.statperk0,
     s.statperk1,
     s.statperk2
-   FROM ((((summoner_matches sm1
+   FROM (((((summoner_matches sm1
      JOIN summoner_matches sm2 ON (((sm1.gameid = sm2.gameid) AND ((sm1.accountid)::text <> (sm2.accountid)::text))))
      JOIN matches m ON ((sm1.gameid = m.gameid)))
      JOIN participants p ON ((((p.participantid)::text = ANY ((m.participants)::text[])) AND ((sm1.accountid)::text = (p.accountid)::text))))
-     JOIN stats s ON (((p.statid)::text = (s.statid)::text)));
+     JOIN stats s ON (((p.statid)::text = (s.statid)::text)))
+     JOIN champions c ON ((p.championid = c.id)));
