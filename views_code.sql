@@ -7,4 +7,5 @@ INNER JOIN summoner_matches sm2 ON sm1.gameid = sm2.gameid AND sm1.accountid <> 
 INNER JOIN matches as m ON sm1.gameid = m.gameid
 INNER JOIN participants as p ON p.participantid = ANY(m.participants) AND sm1.accountid = p.accountid 
 INNER JOIN stats as s ON p.statid = s.statid 
-INNER JOIN champions as c ON p.championid = c.id;
+INNER JOIN champions as c ON p.championid = c.id
+ORDER BY sm1.gameid;
