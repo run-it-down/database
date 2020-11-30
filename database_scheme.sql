@@ -32,7 +32,7 @@ CREATE TABLE summoner_matches (
 );
 
 CREATE TABLE teams (
-  teamId varchar(36) NOT NULL,
+  teamId int NOT NULL,
   gameId bigint NOT NULL,
   win varchar(16) NOT NULL,
   firstBlood bool NOT NULL,
@@ -166,6 +166,7 @@ CREATE TABLE participants (
   accountId varchar(56) NOT NULL,
   championId int NOT NULL,
   statId varchar(36) NOT NULL,
+  teamId int NOT NULL,
   timelineId varchar(36) NOT NULL,
   spell1Id int NOT NULL,
   spell2Id int NOT NULL,
@@ -176,7 +177,8 @@ CREATE TABLE participants (
   FOREIGN KEY (accountId) REFERENCES summoners(accountId),
   FOREIGN KEY (championId) REFERENCES champions(championId),
   FOREIGN KEY (timelineId) REFERENCES timelines(timelineId),
-  FOREIGN KEY (statId) REFERENCES stats(statId)
+  FOREIGN KEY (statId) REFERENCES stats(statId),
+  FOREIGN KEY (teamId) REFERENCES teams(teamId)
 );
 
 CREATE TABLE participant_frame (
