@@ -219,5 +219,5 @@ CREATE TABLE events (
   buildingType varchar(16),
   victimId varchar(36),
   FOREIGN KEY (participantId) REFERENCES participants(participantId),
-  PRIMARY KEY (participantId, timestamp)
+  PRIMARY KEY (participantId, timestamp, type)
 );
