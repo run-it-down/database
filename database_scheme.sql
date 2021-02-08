@@ -178,7 +178,7 @@ CREATE TABLE participants (
   FOREIGN KEY (championId) REFERENCES champions(championId),
   FOREIGN KEY (timelineId) REFERENCES timelines(timelineId),
   FOREIGN KEY (statId) REFERENCES stats(statId),
-  FOREIGN KEY (teamId) REFERENCES teams(teamId)
+  FOREIGN KEY (teamId, gameId) REFERENCES teams(teamId, gameId)
 );
 
 CREATE TABLE participant_frame (
