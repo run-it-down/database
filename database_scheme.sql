@@ -197,7 +197,7 @@ CREATE TABLE participant_frame (
 );
 
 CREATE TABLE events (
-  participantId varchar(36) NOT NULL,
+  participantId varchar(36),
   timestamp bigint NOT NULL,
   laneType varchar(32),
   skillSlot int,
