@@ -208,7 +208,7 @@ CREATE TABLE events (
   type varchar(32),
   levelUpType varchar(16),
   wardType varchar(16),
-  towerType varchar(12),
+  towerType varchar(32),
   itemId int,
   beforeId int,
   monsterType varchar(16),
