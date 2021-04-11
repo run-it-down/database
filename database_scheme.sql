@@ -213,11 +213,11 @@ CREATE TABLE events (
   beforeId int,
   monsterType varchar(16),
   monsterSubType varchar(16),
+  teamId int NOT NULL,
   position point,
   killerId varchar(36),
   assistingParticipantIds varchar(36)[],
   buildingType varchar(16),
   victimId varchar(36),
-  FOREIGN KEY (participantId) REFERENCES participants(participantId),
-  PRIMARY KEY (participantId, timestamp, type)
+  FOREIGN KEY (participantId) REFERENCES participants(participantId)
 );
