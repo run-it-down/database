@@ -213,7 +213,7 @@ CREATE TABLE events (
   beforeId int,
   monsterType varchar(16),
   monsterSubType varchar(16),
-  teamId int NOT NULL,
+  teamId int,
   position point,
   killerId varchar(36),
   assistingParticipantIds varchar(36)[],
