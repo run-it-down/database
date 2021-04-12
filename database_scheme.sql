@@ -172,7 +172,7 @@ CREATE TABLE participants (
   spell2Id int NOT NULL,
   role varchar(11) NOT NULL,
   lane varchar(6) NOT NULL,
-  PRIMARY KEY (participantId),
+  PRIMARY KEY (participantId, accountId),
   FOREIGN KEY (gameId) REFERENCES matches(gameId),
   FOREIGN KEY (accountId) REFERENCES summoners(accountId),
   FOREIGN KEY (championId) REFERENCES champions(championId),
