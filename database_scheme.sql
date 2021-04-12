@@ -163,7 +163,7 @@ CREATE TABLE stats(
 CREATE TABLE participants (
   participantId varchar(36) NOT NULL,
   gameId bigint NOT NULL,
-  accountId varchar(56) NOT NULL UNIQUE,
+  accountId varchar(56) NOT NULL,
   championId int NOT NULL,
   statId varchar(36) NOT NULL,
   teamId int NOT NULL,
@@ -178,7 +178,8 @@ CREATE TABLE participants (
   FOREIGN KEY (championId) REFERENCES champions(championId),
   FOREIGN KEY (timelineId) REFERENCES timelines(timelineId),
   FOREIGN KEY (statId) REFERENCES stats(statId),
-  FOREIGN KEY (teamId, gameId) REFERENCES teams(teamId, gameId)
+  FOREIGN KEY (teamId, gameId) REFERENCES teams(teamId, gameId),
+  UNIQUE (participantId, accountId)
 );
 
 CREATE TABLE participant_frame (
